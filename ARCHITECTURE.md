@@ -10,70 +10,27 @@ Dưới đây là sơ đồ cây thư mục của dự án:
 │       └── main.yml              # Workflow để build và deploy lên Cloudflare Pages
 ├── public/                       # Các file tĩnh không qua xử lý của Vite (favicon)
 │   ├── CNAME
-│   └── Dzokha.ico
+│   └── mucsic.mp3
 ├── src/
-│   ├── assets/                   # Tài nguyên tĩnh của ứng dụng (hình ảnh, icons, font tùy chỉnh)
+│   ├── assets/                             # Tài nguyên tĩnh của ứng dụng (hình ảnh, icons, font tùy chỉnh)
+│   │   ├── fonts/
 │   │   ├── images/
 │   │   └── icons/
 │   ├── components/
-│   │   ├── ui/                   # Các UI component cơ bản, thuần túy (Button, Input, Modal, Table)
-│   │   ├── common/               # Các component dùng chung có logic nội bộ (Pagination, SearchBar)
-│   │   └── layout/               # Các component định hình bố cục trang (Header, Sidebar, Footer)
-│   ├── config/                   # Cấu hình ứng dụng
-│   │   ├── api.ts                # Cấu hình Axios, baseURL từ biến môi trường
-│   │   └── constants.ts          # Các hằng số không nhạy cảm (ENUMs, page size)
-│   ├── hooks/                    # Custom hooks để tái sử dụng logic có stateful
-│   │   ├── useAuth.ts            # Quản lý logic xác thực
-│   │   ├── useForm.ts            # Xử lý form state và validation
-│   │   └── useApiCall.ts         # Wrapper cho gọi API với loading/error state
-│   ├── layouts/                  # Các layout chính cho các nhóm trang (MainLayout, AuthLayout)
-│   │   ├── MainLayout.tsx
-│   │   └── AuthLayout.tsx
+│   │   ├── ui/                             # Các UI component cơ bản, thuần túy (Button, Input, Modal, Table)
+│   │   └── layout/                         # Các component định hình bố cục trang (Header, Sidebar, Footer)
+│   ├── hooks/                              # Custom hooks để tái sử dụng logic có stateful
+│   │   └── useMusic.ts                     # Hook bật/tắt nhạc nền
 │   ├── modules/
-│   │   ├── auth/                 # Trang đăng nhập, đăng ký              
-│   │   │   ├── LoginPage.tsx
-│   │   │   └── RegisterPage.tsx
-│   │   ├── geneai/
-│   │   │   ├── assets/
-│   │   │   ├── components/ 
-│   │   │   ├── pages/                    # Các trang ứng dụng, mỗi trang là một view hoàn chỉnh
-│   │   │   │   └── Dashboard.tsx
-│   │   │   ├── services/                 # Các module gọi API và xử lý dữ liệu backend
-│   │   ├── shopfish/
-│   │   │   ├── assets/
-│   │   │   ├── components/ 
-│   │   │   ├── pages/                    # Các trang ứng dụng, mỗi trang là một view hoàn chỉnh
-│   │   │   │   ├── categories/           # Quản lý danh mục sản phẩm
-│   │   │   │   │   ├── CategoryList.tsx
-│   │   │   │   │   └── CategoryForm.tsx
-│   │   │   │   ├── products/             # Quản lý sản phẩm
-│   │   │   │   │   ├── ProductList.tsx
-│   │   │   │   │   └── ProductForm.tsx
-│   │   │   │   ├── orders/               # Quản lý đơn hàng
-│   │   │   │   │   ├── OrderList.tsx
-│   │   │   │   │   └── OrderDetail.tsx
-│   │   │   │   └── Dashboard.tsx
-│   │   │   ├── services/                 # Các module gọi API và xử lý dữ liệu backend
-│   │   │   │   ├── authService.ts
-│   │   │   │   ├── categoryService.ts
-│   │   │   │   ├── productService.ts
-│   │   │   │   └── orderService.ts
-│   ├── services/                 
-│   ├── store/                    # Quản lý global state (Sử dụng Redux Toolkit)
-│   │   ├── index.ts              # Cấu hình Redux store
-│   │   ├── slices/               # Các Redux slices riêng biệt
-│   │   │   ├── authSlice.ts
-│   │   │   ├── categorySlice.ts
-│   │   │   ├── productSlice.ts
-│   │   │   └── orderSlice.ts
-│   │   └── selectors/            # Các selector để truy cập state
-│   ├── styles/                   # Các file CSS/SCSS
-│   │   ├── base.css              # Reset CSS, CSS chung nhất
-│   │   ├── variables.css         # Biến CSS (màu sắc, font, spacing)
-│   │   └── typography.css        # Định nghĩa các kiểu chữ
-│   ├── utils/                    # Các hàm tiện ích, helpers
-│   │   ├── validation.ts
-│   │   └── formatters.ts
+│   │   ├── couple1/                        # Thiep cua Hai - Trang
+│   │   │   ├── pages/                    
+│   │   │   │   └── WeddingCard.tsx
+│   │   ├── couple2/                        # Thiep cua Client - Server
+│   │   │   ├── pages/                    
+│   │   │   │   └── WeddingCard.tsx
+│   ├── styles/                             # Các file CSS/SCSS
+│   │   ├── base.css                        # Reset + CSS chung nhất
+│   │   └── animation.css                   # Hiệu ứng hoa rơi
 │   ├── App.tsx                   # Component gốc của ứng dụng
 │   ├── main.tsx                  # Entry point của ứng dụng
 │   ├── router.tsx                # Định nghĩa tất cả các routes của ứng dụng
@@ -91,28 +48,3 @@ Dưới đây là sơ đồ cây thư mục của dự án:
 └── vite.config.ts                # Cấu hình Vite
 
 ```
-
-## 2. Giải thích các thư mục chính
-
-* **`public/`**: Chứa các tài nguyên tĩnh được phục vụ trực tiếp bởi web server (ví dụ: `index.html`, `favicon.ico`).
-* **`src/`**: Mã nguồn chính của ứng dụng.
-    * **`assets/`**: Hình ảnh, biểu tượng, font chữ cục bộ.
-    * **`components/`**: Các thành phần UI có thể tái sử dụng.
-        * `ui/`: Các thành phần nhỏ, không có logic nghiệp vụ (e.g., Button, Input).
-        * `common/`: Các thành phần phức tạp hơn, có thể kết hợp nhiều `ui` components (e.g., Pagination, SearchBar).
-        * `layout/`: Các thành phần tạo bố cục cho các trang (e.g., Header, Sidebar).
-    * **`config/`**: Cài đặt chung của ứng dụng, như baseURL cho API, các hằng số.
-    * **`hooks/`**: Custom React Hooks để trừu tượng hóa và tái sử dụng logic có state.
-    * **`layouts/`**: Các bố cục trang chính, bao gồm các thành phần `layout` và chứa `Outlet` cho nội dung trang.
-    * **`pages/`**: Các trang riêng lẻ của ứng dụng, mỗi trang đại diện cho một view hoàn chỉnh. Được nhóm theo tính năng (e.g., `categories`, `products`).
-    * **`services/`**: Các module chứa logic để tương tác với API backend.
-    * **`store/`**: Quản lý trạng thái toàn cục của ứng dụng (sử dụng Redux Toolkit).
-    * **`styles/`**: Các định nghĩa CSS toàn cục, biến CSS, v.v.
-    * **`utils/`**: Các hàm tiện ích không liên quan đến UI hay state.
-* **`.env.*` files**: Chứa các biến môi trường, **không được commit lên Git**. Các biến này được Cloudflare Pages/Vite inject vào quá trình build.
-* **`.github/`**: Cấu hình CI/CD với GitHub Actions.
-* **`*.ts`, `*.json` files**: Các file cấu hình cho TypeScript, ESLint, Vite.
-
-## 3. Quản lý biến môi trường
-
-Các thông tin nhạy cảm (như URL API backend production) được quản lý thông qua **Cloudflare Pages Environment Variables**, và các file `.env.*` chỉ dùng cho phát triển cục bộ và không được đẩy lên GitHub.

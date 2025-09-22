@@ -10,15 +10,22 @@ git clone https://github.com/dzokha/WeddingCards.git
 cd WeddingCards
 ```
 ### 3. Cài dependencies 
-`npm install`
+```bash
+npm install
+```
 ### 4. Cấu hình biến môi trường:
 - Tạo file .env.development ở thư mục gốc và thêm nội dung:
-
-`VITE_API_BASE_URL=http://localhost:5000/api`
+```bash
+VITE_API_BASE_URL=http://localhost:5000/api
+```
 ### 5. Chạy dư án trên môi trường phát triển 
-`npm run dev`
+```bash
+npm run dev
+```
 ### 5. Build bản Production 
-`npm run build`
+```bash
+npm run build
+```
 ## References
 
 

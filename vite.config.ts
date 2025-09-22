@@ -1,10 +1,14 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// @ts-ignore
 import path from 'path'
-
+// @ts-ignore
 import { fileURLToPath } from 'url'
 
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// @ts-ignore
 const __filename = fileURLToPath(import.meta.url)
+// @ts-ignore
 const __dirname = path.dirname(__filename)
 
 // https://vitejs.dev/config/

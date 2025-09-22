@@ -14,7 +14,7 @@ cd WeddingCards
 npm install
 ```
 ### 4. Cấu hình biến môi trường:
-- Tạo file .env.development ở thư mục gốc và thêm nội dung:
+Tạo file .env.development ở thư mục gốc và thêm nội dung:
 ```bash
 VITE_API_BASE_URL=http://localhost:5000/api
 ```

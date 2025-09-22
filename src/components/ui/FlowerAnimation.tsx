@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import '@styles/animation.css'
+import '@styles/Animation.css'
 import flowerImg from '@assets/images/flower.png' // Vite sẽ xử lý import hình ảnh
 
 interface FlowerProps {

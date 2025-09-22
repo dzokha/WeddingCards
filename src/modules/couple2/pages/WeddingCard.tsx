@@ -1,5 +1,5 @@
-import '@styles/Base.css'
-import '@styles/Animation.css'
+import '@styles/base.css'
+import '@styles/animation.css'
 import { useMusic } from '@hooks/useMusic'
 import FlowerAnimation from '@components/ui/FlowerAnimation'
 

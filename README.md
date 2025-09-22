@@ -1,4 +1,4 @@
-# Weddings
+# WeddingCards
 
 
 ## References

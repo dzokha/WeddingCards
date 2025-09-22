@@ -1,14 +1,11 @@
-# Kiến trúc Dự án GeneAI
-## 1. Cấu trúc thư mục
-
-Dưới đây là sơ đồ cây thư mục của dự án:
+# Kiến trúc Dự án WeddingCards
 
 ```
 .
-├── .github/                      # Cấu hình GitHub Actions (CI/CD)
+├── .github/                                # Cấu hình GitHub Actions (CI/CD)
 │   └── workflows/
-│       └── main.yml              # Workflow để build và deploy lên Cloudflare Pages
-├── public/                       # Các file tĩnh không qua xử lý của Vite (favicon)
+│       └── main.yml                        # Workflow để build và deploy lên Cloudflare Pages
+├── public/                                 # Các file tĩnh không qua xử lý của Vite (favicon)
 │   ├── CNAME
 │   └── mucsic.mp3
 ├── src/
@@ -31,20 +28,20 @@ Dưới đây là sơ đồ cây thư mục của dự án:
 │   ├── styles/                             # Các file CSS/SCSS
 │   │   ├── base.css                        # Reset + CSS chung nhất
 │   │   └── animation.css                   # Hiệu ứng hoa rơi
-│   ├── App.tsx                   # Component gốc của ứng dụng
-│   ├── main.tsx                  # Entry point của ứng dụng
-│   ├── router.tsx                # Định nghĩa tất cả các routes của ứng dụng
-│   └── vite-env.d.ts             # Type definitions cho biến môi trường Vite
-├── .env.development              # Biến môi trường cho môi trường phát triển (KHÔNG COMMIT)
-├── .env.production               # Biến môi trường cho môi trường production (KHÔNG COMMIT)
-├── .gitignore                    # Danh sách các file/thư mục không đưa lên Git
-├── eslint.config.js              # Cấu hình ESLint
+│   ├── App.tsx                             # Component gốc của ứng dụng
+│   ├── main.tsx                            # Entry point của ứng dụng
+│   ├── router.tsx                          # Định nghĩa tất cả các routes của ứng dụng
+│   └── vite-env.d.ts                       # Type definitions cho biến môi trường Vite
+├── .env.development                        # Biến môi trường cho môi trường phát triển (KHÔNG COMMIT)
+├── .env.production                         # Biến môi trường cho môi trường production (KHÔNG COMMIT)
+├── .gitignore                              # Danh sách các file/thư mục không đưa lên Git
+├── eslint.config.js                        # Cấu hình ESLint
 ├── index.html
-├── package.json                  # Thông tin dự án và dependencies
-├── README.md                     # Tài liệu chính của dự án
-├── tsconfig.app.json             # Cấu hình TypeScript cho ứng dụng
-├── tsconfig.json                 # Cấu hình TypeScript tổng thể
-├── tsconfig.node.json            # Cấu hình TypeScript cho môi trường Node.js
-└── vite.config.ts                # Cấu hình Vite
+├── package.json                            # Thông tin dự án và dependencies
+├── README.md                               # Tài liệu chính của dự án
+├── tsconfig.app.json                       # Cấu hình TypeScript cho ứng dụng
+├── tsconfig.json                           # Cấu hình TypeScript tổng thể
+├── tsconfig.node.json                      # Cấu hình TypeScript cho môi trường Node.js
+└── vite.config.ts                          # Cấu hình Vite
 
 ```

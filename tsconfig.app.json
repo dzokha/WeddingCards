@@ -23,6 +23,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
+    "types": ["node"],
+
     // <-- Thêm baseUrl + paths để fix alias
     "baseUrl": "src",
     "paths": {

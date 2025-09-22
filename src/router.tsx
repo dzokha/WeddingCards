@@ -1,18 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import App from './App'
-import WeddingCardHaiTrang from './modules/couple1/pages/WeddingCard'
-import WeddingCardClientServer from './modules/couple2/pages/WeddingCard'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from '@modules/home/Home'
+import WeddingCard1 from '@modules/couple1/pages/WeddingCard'
+import WeddingCard2 from '@modules/couple2/pages/WeddingCard'
 
-function AppRouter() {
+export default function Router() {
   return (
-    <Router>
+    <BrowserRouter basename="/WeddingCards">
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/hai-trang" element={<WeddingCardHaiTrang />} />
-        <Route path="/client-server" element={<WeddingCardClientServer />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/hai-trang" element={<WeddingCard1 />} />
+        <Route path="/client-server" element={<WeddingCard2 />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
-
-export default AppRouter

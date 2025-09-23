@@ -24,12 +24,23 @@
     "noUncheckedSideEffectImports": true,
 
     // <-- Thêm baseUrl + paths để fix alias
-    "baseUrl": "src",
+    // "baseUrl": ".", // BẮT BUỘC "src",
+    // "paths": {
+    //   "@/*": ["./src/*"], // THÊM DÒNG NÀY
+    //   "@hooks/*": ["hooks/*"],
+    //   "@components/*": ["components/*"],
+    //   "@modules/*": ["modules/*"]
+    // }
+
+    "baseUrl": "./src",
     "paths": {
+      "@/*": ["*"],
       "@hooks/*": ["hooks/*"],
       "@components/*": ["components/*"],
       "@modules/*": ["modules/*"]
     }
+
+    
   },
   "include": ["src"]
 }

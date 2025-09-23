@@ -5,67 +5,53 @@ import Gallery from '../components/Gallery'
 import { useMusic } from '@hooks/useMusic'
 import FlowerAnimation from '@components/ui/FlowerAnimation'
 
-// Import ảnh (Vite xử lý và build đúng)
-import CoDauImg from '../assets/codau.jpg'
-import ChuReImg from '../assets/chure.jpg'
-import BrideImg from '../assets/codau.jpg'
-import GroomImg from '../assets/codau.jpg'
-import HeaderBgImg from '../assets/codau.jpg'
+// Import cấu hình dữ liệu
+import { weddingData } from '@/wedding.config';
 
 export default function WeddingCard() {
-  const { toggle, isPlaying } = useMusic('tenderness.mp3')
+  const { toggle, isPlaying } = useMusic(weddingData.musicFile);
 
   return (
     <div className="wedding-card">
-      {/* Header */}
-      <header
-        className="header h-60 flex flex-col items-center justify-center text-white"
-        style={{
-          backgroundImage: `url(${HeaderBgImg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <h1 className="text-4xl font-bold">Thiệp Cưới</h1>
-        <h2 className="text-2xl">Mạnh Hải 💖 Kim Trang</h2>
+      <header className="header">
+        <img src={weddingData.header.image} alt="Header Background" className="header-img" />
+        <h1>{weddingData.header.title}</h1>
+        <h2>{weddingData.header.subtitle}</h2>
       </header>
 
-      {/* Bride & Groom */}
-      <section className="bride-groom-section flex justify-center gap-10 my-10">
-        <BrideGroom name="Bùi Mạnh Hải" role="Chú Rể" image={ChuReImg} />
-        <BrideGroom name="Huỳnh Thị Kim Trang" role="Cô Dâu" image={CoDauImg} />
-      </section>
+      {/* Shape Divider */}
+      <div className="shape-divider"></div>
 
-      {/* Event Info */}
-      <EventInfo
-        date="12/10/2025 (Nhằm 21/8 Âm lịch)"
-        time="11:00 sáng"
-        location="Tư gia – Ấp Thắng Lợi, Xã Vĩnh Thạnh, TP. Cần Thơ"
-      />
+      <main className="content-wrapper">
+        <section className="bride-groom-section">
+          <BrideGroom name={weddingData.groom.name} role={weddingData.groom.role} image={weddingData.groom.image} />
+          <BrideGroom name={weddingData.bride.name} role={weddingData.bride.role} image={weddingData.bride.image} />
+        </section>
 
-      {/* Countdown */}
-      <Countdown targetDate="2025-10-12T10:00:00" />
+        <EventInfo
+          date={weddingData.event.date}
+          time={weddingData.event.time}
+          location={weddingData.event.location}
+        />
 
-      {/* Gallery */}
-      <Gallery images={[BrideImg, GroomImg, HeaderBgImg, HeaderBgImg]} />
+        <Countdown targetDate={weddingData.countdownTargetDate} />
 
-      {/* Music Button */}
-      <div className="flex justify-center my-6">
-        <button
-          className="music-btn px-4 py-2 bg-pink-500 text-white rounded-lg shadow-lg"
-          onClick={toggle}
-        >
-          {isPlaying ? "⏸ Tắt nhạc" : "▶️ Phát nhạc"}
-        </button>
-      </div>
+        <Gallery images={weddingData.galleryImages} />
 
-      {/* Flower Animation */}
+        <footer className="footer">
+          <p>{weddingData.footerMessage}</p>
+        </footer>
+      </main>
+
+      {/* Music Button - Floating */}
+      <button className="music-btn" onClick={toggle} aria-label="Play or pause music">
+        {isPlaying ? 
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> :
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8 5v14l11-7L8 5z"/></svg>
+        }
+      </button>
+
       <FlowerAnimation count={25} />
-
-      {/* Footer */}
-      <footer className="footer text-center py-6 text-gray-600">
-        <p>Rất hân hạnh được đón tiếp quý khách!</p>
-      </footer>
     </div>
-  )
+  );
 }

@@ -27,7 +27,7 @@ export default function WeddingCard() {
         }}
       >
         <h1 className="text-4xl font-bold">Thiệp Cưới</h1>
-        <h2 className="text-2xl">Minh Hải 💖 Kim Trang</h2>
+        <h2 className="text-2xl">Mạnh Hải 💖 Kim Trang</h2>
       </header>
 
       {/* Bride & Groom */}

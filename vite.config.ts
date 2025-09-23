@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename)
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/WeddingCards/',
+  base: '/',
   plugins: [react()],
   resolve: {
     alias: {

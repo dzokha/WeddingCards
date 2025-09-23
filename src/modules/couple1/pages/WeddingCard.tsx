@@ -9,7 +9,7 @@ import FlowerAnimation from "@/components/ui/FlowerAnimation"
 import "../assets/codau.jpg" // ví dụ asset, thay bằng ảnh thật
 
 export default function WeddingCard() {
-  const { toggle, isPlaying } = useMusic("/mucsic.mp3")
+  const { toggle, isPlaying } = useMusic('tenderness.mp3')
 
   return (
     <div className="wedding-card">

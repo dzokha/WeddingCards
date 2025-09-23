@@ -40,7 +40,7 @@ export default function WeddingCard() {
       <EventInfo
         date="12/10/2025 (Nhằm 21/8 Âm lịch)"
         time="10:00 sáng"
-        location="Nhà hàng Hoa Sen, TP Pleiku, Gia Lai"
+        location="Tư gia – Ấp Thắng Lợi, Xã Vĩnh Thạnh, TP. Cần Thơ"
       />
 
       {/* Countdown */}

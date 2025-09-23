@@ -5,7 +5,7 @@ import WeddingCard2 from '@modules/couple2/pages/WeddingCard'
 
 export default function Router() {
   return (
-    <BrowserRouter basename="/WeddingCards">
+    <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hai-trang" element={<WeddingCard1 />} />

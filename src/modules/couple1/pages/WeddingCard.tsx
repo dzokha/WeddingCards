@@ -1,10 +1,9 @@
-import React from "react"
 import BrideGroom from "../components/BrideGroom"
 import EventInfo from "../components/EventInfo"
 import Countdown from "../components/Countdown"
 import Gallery from "../components/Gallery"
-import { useMusic } from "@/hooks/useMusic"
-import FlowerAnimation from "@/components/ui/FlowerAnimation"
+import { useMusic } from '@hooks/useMusic'
+import FlowerAnimation from '@components/ui/FlowerAnimation'
 
 import "../assets/codau.jpg" // ví dụ asset, thay bằng ảnh thật
 

@@ -39,7 +39,7 @@ export default function WeddingCard() {
       {/* Event Info */}
       <EventInfo
         date="12/10/2025 (Nhằm 21/8 Âm lịch)"
-        time="10:00 sáng"
+        time="11:00 sáng"
         location="Tư gia – Ấp Thắng Lợi, Xã Vĩnh Thạnh, TP. Cần Thơ"
       />
 

@@ -32,8 +32,8 @@ export default function WeddingCard() {
 
       {/* Bride & Groom */}
       <section className="bride-groom-section flex justify-center gap-10 my-10">
-        <BrideGroom name="Nguyễn Minh Hải" role="Chú Rể" image={ChuReImg} />
-        <BrideGroom name="Trần Kim Trang" role="Cô Dâu" image={CoDauImg} />
+        <BrideGroom name="Bùi Mạnh Hải" role="Chú Rể" image={ChuReImg} />
+        <BrideGroom name="Huỳnh Thị Kim Trang" role="Cô Dâu" image={CoDauImg} />
       </section>
 
       {/* Event Info */}

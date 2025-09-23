@@ -1,51 +1,69 @@
-import '@styles/base.css'
-import '@styles/animation.css'
-import { useMusic } from '@hooks/useMusic'
-import FlowerAnimation from '@components/ui/FlowerAnimation'
+import React from "react"
+import BrideGroom from "../components/BrideGroom"
+import EventInfo from "../components/EventInfo"
+import Countdown from "../components/Countdown"
+import Gallery from "../components/Gallery"
+import { useMusic } from "@/hooks/useMusic"
+import FlowerAnimation from "@/components/ui/FlowerAnimation"
 
+import "../assets/codau.jpg" // ví dụ asset, thay bằng ảnh thật
 
 export default function WeddingCard() {
-  const { toggle, isPlaying } = useMusic('tenderness.mp3') // chỉ cần tên file, hook sẽ tự prepend base
-
-  // Hình ảnh placeholder, bạn thay bằng hình thực tế
-  const images = [
-    'https://via.placeholder.com/300x400?text=Cô+Dâu',
-    'https://via.placeholder.com/300x400?text=Chú+Rể',
-    'https://via.placeholder.com/600x200?text=Background+Header',
-  ]
+  const { toggle, isPlaying } = useMusic("/mucsic.mp3")
 
   return (
     <div className="wedding-card">
-      {/* Background Header */}
-      <div className="header-img">
-        <img src={images[2]} alt="Background Header" />
-      </div>
+      {/* Header */}
+      <header className="header">
+        <h1>Thiệp Cưới</h1>
+        <h2>Minh Hải 💖 Kim Trang</h2>
+      </header>
 
-      {/* Thông tin cặp đôi */}
-      <div className="couple-section">
-        <div className="couple-image">
-          <img src={images[0]} alt="Cô Dâu" />
-        </div>
-        <div className="vs-text">❤️</div>
-        <div className="couple-image">
-          <img src={images[1]} alt="Chú Rể" />
-        </div>
-      </div>
+      {/* Bride & Groom */}
+      <section className="bride-groom-section">
+        <BrideGroom
+          name="Nguyễn Minh Hải"
+          role="Chú Rể"
+          image="/src/modules/couple1/assets/chure.jpg"
+        />
+        <BrideGroom
+          name="Trần Kim Trang"
+          role="Cô Dâu"
+          image="/src/modules/couple1/assets/codau.jpg"
+        />
+      </section>
 
-      {/* Thông tin ngày giờ */}
-      <div className="info-text">
-        <h1>Minh Hải & Kim Trang</h1>
-        <h2>12/10/2025 nhằm ngày 21/8/2025</h2>
-        <p>Trân trọng kính mời quý khách đến chung vui</p>
-      </div>
+      {/* Event Info */}
+      <EventInfo
+        date="12/10/2025 (Nhằm 21/8 Âm lịch)"
+        time="10:00 sáng"
+        location="Nhà hàng Hoa Sen, TP Pleiku, Gia Lai"
+      />
 
-      {/* Nút nhạc */}
-      <button onClick={toggle}>
-        {isPlaying ? 'Pause Music' : 'Play Music'}
+      {/* Countdown */}
+      <Countdown targetDate="2025-10-12T10:00:00" />
+
+      {/* Gallery */}
+      <Gallery
+        images={[
+          "/src/assets/images/bride.jpg",
+          "/src/assets/images/groom.jpg",
+          "/src/assets/images/header-bg.jpg",
+        ]}
+      />
+
+      {/* Music Button */}
+      <button className="music-btn" onClick={toggle}>
+        {isPlaying ? "⏸ Tắt nhạc" : "▶️ Phát nhạc"}
       </button>
 
-      {/* Hoa rơi */}
-      <FlowerAnimation count={30} /> {/* Tùy chỉnh số lượng hoa rơi */}
+      {/* Flower Animation */}
+      <FlowerAnimation count={25} />
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>Rất hân hạnh được đón tiếp quý khách!</p>
+      </footer>
     </div>
   )
 }

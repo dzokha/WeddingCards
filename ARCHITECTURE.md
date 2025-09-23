@@ -14,15 +14,27 @@
 │   │   ├── images/
 │   │   └── icons/
 │   ├── components/
-│   │   ├── ui/                             # Các UI component cơ bản, thuần túy (Button, Input, Modal, Table)
+│   │   ├── ui/                             # Các UI component cơ bản, thuần túy (Button, Input, Modal, Table)                    
+│   │   │   └── FlowerAnimation.tsx
 │   │   └── layout/                         # Các component định hình bố cục trang (Header, Sidebar, Footer)
 │   ├── hooks/                              # Custom hooks để tái sử dụng logic có stateful
 │   │   └── useMusic.ts                     # Hook bật/tắt nhạc nền
 │   ├── modules/
 │   │   ├── couple1/                        # Thiep cua Hai - Trang
+│   │   │   ├── assets/                    
+│   │   │   │   └── codau.jpg
+│   │   │   ├── components/                    
+│   │   │   │   ├── BrideGroom.tsx
+│   │   │   │   ├── Countdown.tsx
+│   │   │   │   ├── EventInfo.tsx
+│   │   │   │   └── Gallery.tsx
 │   │   │   ├── pages/                    
 │   │   │   │   └── WeddingCard.tsx
 │   │   ├── couple2/                        # Thiep cua Client - Server
+│   │   │   ├── assets/                    
+│   │   │   │   └── codau.jpg
+│   │   │   ├── components/                    
+│   │   │   │   └── BrideGroom.tsx
 │   │   │   ├── pages/                    
 │   │   │   │   └── WeddingCard.tsx
 │   ├── styles/                             # Các file CSS/SCSS

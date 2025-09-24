@@ -1,0 +1,49 @@
+/* ----- THÔNG TIN CÔ DÂU - CHÚ RỂ (COUPLE 1) ----- */
+.bride-groom-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.bride-groom-card {
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.bride-groom-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 32px var(--shadow-color-hover);
+}
+
+.bride-groom-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.bride-groom-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.bride-groom-card p.role {
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+/* Responsive riêng cho couple1 */
+@media (max-width: 768px) {
+  .bride-groom-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,8 +1,8 @@
 import "../couple1.css";
-import BrideGroom from '@components/BrideGroom'
-import EventInfo from '@components/EventInfo'
-import Countdown from '@components/Countdown'
-import Gallery from '@components/Gallery'
+import BrideGroom from '../components/BrideGroom'
+import EventInfo from '../components/EventInfo'
+import Countdown from '../components/Countdown'
+import Gallery from '../components/Gallery'
 import { useMusic } from '@hooks/useMusic'
 import FlowerAnimation from '@components/FlowerAnimation'
 

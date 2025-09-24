@@ -14,22 +14,28 @@
 │   │   ├── images/
 │   │   └── icons/
 │   ├── components/							# Component tái sử dụng
-│   │   ├── BrideGroom.tsx     
-│   │   ├── Countdown.tsx  
-│   │   ├── EventInfo.tsx
-│   │   ├── FlowerAnimation.tsx
-│   │   └── Gallery.tsx 
+│   │   └── FlowerAnimation.tsx
 │   ├── hooks/                              # Custom hooks để tái sử dụng logic có stateful
 │   │   └── useMusic.ts                     # Hook bật/tắt nhạc nền
 │   ├── modules/
 │   │   ├── couple1/                        # Thiep cua Hai - Trang
 │   │   │   ├── assets/                     # Ảnh riêng couple1
+│   │   │   ├── components/					# Component riêng của couple1
+│   │   │   │   ├── BrideGroom.tsx     
+│   │   │   │   ├── Countdown.tsx  
+│   │   │   │   ├── EventInfo.tsx
+│   │   │   │   └── Gallery.tsx 
 │   │   │   ├── pages/                    
 │   │   │   │   └── WeddingCard.tsx
 │   │   │   ├── couple1.css          		# Style riêng couple1
 │   │   │   └── wedding.config.ts           # Cấu hình couple1
 │   │   ├── couple2/                        # Thiep cua Client - Server
-│   │   │   ├── assets/                     
+│   │   │   ├── assets/     
+│   │   │   ├── components/					# Component riêng của couple2
+│   │   │   │   ├── BrideGroom.tsx     
+│   │   │   │   ├── Countdown.tsx  
+│   │   │   │   ├── EventInfo.tsx
+│   │   │   │   └── Gallery.tsx                 
 │   │   │   ├── pages/                    
 │   │   │   │   └── WeddingCard.tsx
 │   │   │   ├── couple2.css          		# Style riêng couple1

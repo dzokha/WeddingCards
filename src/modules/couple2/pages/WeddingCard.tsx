@@ -1,7 +1,7 @@
 import '@styles/base.css'
 import '@styles/animation.css'
 import { useMusic } from '@hooks/useMusic'
-import FlowerAnimation from '@components/ui/FlowerAnimation'
+import FlowerAnimation from '@components/FlowerAnimation'
 
 
 export default function WeddingCard() {

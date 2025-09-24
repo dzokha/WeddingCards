@@ -1,9 +1,10 @@
-import BrideGroom from '../components/BrideGroom'
-import EventInfo from '../components/EventInfo'
-import Countdown from '../components/Countdown'
-import Gallery from '../components/Gallery'
+import "../couple1.css";
+import BrideGroom from '@components/BrideGroom'
+import EventInfo from '@components/EventInfo'
+import Countdown from '@components/Countdown'
+import Gallery from '@components/Gallery'
 import { useMusic } from '@hooks/useMusic'
-import FlowerAnimation from '@components/ui/FlowerAnimation'
+import FlowerAnimation from '@components/FlowerAnimation'
 
 // Import cấu hình dữ liệu
 import { weddingData } from '@modules/couple1/wedding.config';

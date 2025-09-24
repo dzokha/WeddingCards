@@ -13,30 +13,27 @@
 │   │   ├── fonts/
 │   │   ├── images/
 │   │   └── icons/
-│   ├── components/
-│   │   ├── ui/                             # Các UI component cơ bản, thuần túy (Button, Input, Modal, Table)                    
-│   │   │   └── FlowerAnimation.tsx
-│   │   └── layout/                         # Các component định hình bố cục trang (Header, Sidebar, Footer)
+│   ├── components/							# Component tái sử dụng
+│   │   ├── BrideGroom.tsx     
+│   │   ├── Countdown.tsx  
+│   │   ├── EventInfo.tsx
+│   │   ├── FlowerAnimation.tsx
+│   │   └── Gallery.tsx 
 │   ├── hooks/                              # Custom hooks để tái sử dụng logic có stateful
 │   │   └── useMusic.ts                     # Hook bật/tắt nhạc nền
 │   ├── modules/
 │   │   ├── couple1/                        # Thiep cua Hai - Trang
-│   │   │   ├── assets/                    
-│   │   │   │   └── codau.jpg
-│   │   │   ├── components/                    
-│   │   │   │   ├── BrideGroom.tsx
-│   │   │   │   ├── Countdown.tsx
-│   │   │   │   ├── EventInfo.tsx
-│   │   │   │   └── Gallery.tsx
+│   │   │   ├── assets/                     # Ảnh riêng couple1
 │   │   │   ├── pages/                    
 │   │   │   │   └── WeddingCard.tsx
+│   │   │   ├── couple1.css          		# Style riêng couple1
+│   │   │   └── wedding.config.ts           # Cấu hình couple1
 │   │   ├── couple2/                        # Thiep cua Client - Server
-│   │   │   ├── assets/                    
-│   │   │   │   └── codau.jpg
-│   │   │   ├── components/                    
-│   │   │   │   └── BrideGroom.tsx
+│   │   │   ├── assets/                     
 │   │   │   ├── pages/                    
 │   │   │   │   └── WeddingCard.tsx
+│   │   │   ├── couple2.css          		# Style riêng couple1
+│   │   │   └── wedding.config.ts           # Cấu hình couple1
 │   ├── styles/                             # Các file CSS/SCSS
 │   │   ├── base.css                        # Reset + CSS chung nhất
 │   │   └── animation.css                   # Hiệu ứng hoa rơi

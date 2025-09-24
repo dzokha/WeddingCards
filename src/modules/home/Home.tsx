@@ -22,7 +22,7 @@ const sampleCouples: Couple[] = [
     imageUrl: CoupleIMG,
   },
   {
-    id: 1,
+    id: 2,
     slug: 'hai-trang',
     groomName: 'Mạnh Hải',
     brideName: 'Kim Trang',
@@ -31,10 +31,10 @@ const sampleCouples: Couple[] = [
   },
   {
     id: 3,
-    slug: 'thanh-phong-my-duyen',
-    groomName: 'Thành Phong',
-    brideName: 'Mỹ Duyên',
-    weddingDate: '08.03.2026',
+    slug: 'hai-trang',
+    groomName: 'Mạnh Hải',
+    brideName: 'Kim Trang',
+    weddingDate: '12.10.2025',
     imageUrl: CoupleIMG,
   },
 ];

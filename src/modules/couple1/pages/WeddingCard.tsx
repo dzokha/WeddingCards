@@ -6,7 +6,7 @@ import { useMusic } from '@hooks/useMusic'
 import FlowerAnimation from '@components/ui/FlowerAnimation'
 
 // Import cấu hình dữ liệu
-import { weddingData } from '@/wedding.config';
+import { weddingData } from '@modules/couple1/wedding.config';
 
 export default function WeddingCard() {
   const { toggle, isPlaying } = useMusic(weddingData.musicFile);
@@ -19,10 +19,17 @@ export default function WeddingCard() {
         <h2>{weddingData.header.subtitle}</h2>
       </header>
 
+      
+
       {/* Shape Divider */}
       <div className="shape-divider"></div>
 
       <main className="content-wrapper">
+
+        
+        <h2 className="section-title">HAPPY WEDDING</h2>
+        
+
         <section className="bride-groom-section">
           <BrideGroom name={weddingData.groom.name} role={weddingData.groom.role} image={weddingData.groom.image} />
           <BrideGroom name={weddingData.bride.name} role={weddingData.bride.role} image={weddingData.bride.image} />

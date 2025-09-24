@@ -62,8 +62,7 @@ export default function WeddingCard() {
                 style={{ border: 0 }}
                 allowFullScreen={false} 
                 loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-                
+                referrerPolicy="no-referrer-when-downgrade">
               </iframe>
           </div>
         </section>

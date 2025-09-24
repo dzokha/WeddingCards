@@ -45,9 +45,36 @@ export default function WeddingCard() {
 
         <Gallery images={weddingData.galleryImages} />
 
+        {/*
+          Thêm section Bản đồ vào đây
+          Đặt section này trước footer để tuân thủ bố cục chung của trang
+        */}
+        <section className="map-section">
+          <h2 className="section-title">
+            <span role="img" aria-label="map">📍</span> Địa Điểm Tổ Chức
+          </h2>
+          <div className="map-container">
+            <iframe 
+                title="Địa Điểm Tổ Chức"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3927.011403516329!2d105.41723097503355!3d10.179727989934971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDEwJzQ3LjAiTiAxMDXCsDI1JzExLjMiRQ!5e0!3m2!1sen!2s!4v1758701390888!5m2!1sen!2s" 
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen={false} 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+                
+              </iframe>
+          </div>
+        </section>
+      
+
         <footer className="footer">
-          <p>{weddingData.footerMessage}</p>
+          <p className="footer-message">
+            Rất hân hạnh được đón tiếp quý khách!
+          </p>
         </footer>
+
       </main>
 
       {/* Music Button - Floating */}

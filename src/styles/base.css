@@ -242,7 +242,7 @@ section:nth-of-type(even) {
 
 .gallery-img {
   width: 100%;
-  height: 400px;
+  height: 390px;
   object-fit: cover;
   object-position: center -50px;
   display: block;
@@ -315,6 +315,30 @@ section:nth-of-type(even) {
   font-style: italic;
 }
 
+
+.footer-message {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--color-primary);
+  text-align: center;
+  margin: 3rem auto 2rem;
+  position: relative;      /* bắt buộc để ::before position:absolute tham chiếu */
+  padding-top: 1.4rem;     /* tạo khoảng cho ký hiệu */
+}
+
+.footer-message::before {
+  content: "❦";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -40%); /* nâng/đẩy ký hiệu lên trên một chút */
+  font-size: 1.6rem;
+  color: var(--color-primary-dark);
+  line-height: 1;
+  pointer-events: none;
+}
+
 /* ----- RESPONSIVE ----- */
 @media (max-width: 768px) {
   .bride-groom-section {
@@ -326,4 +350,48 @@ section:nth-of-type(even) {
   }
 }
 
+/* ----- STYLE CHO SECTION BẢN ĐỒ ----- */
+/* ----- SECTION MAP CẢI TIẾN ----- */
+.map-section {
+  max-width: 1000px;
+  margin: 3rem auto 4rem auto; /* Khoảng cách hợp lý hơn */
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.map-section .section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.map-section .section-title::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  margin: 0.5rem auto 0 auto;
+  background: var(--color-primary);
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+.map-container {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px var(--shadow-color);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  background: var(--color-white); /* Tạo contrast với nền */
+}
+
+.map-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 32px var(--shadow-color-hover);
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 450px;
+}
 

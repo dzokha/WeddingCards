@@ -7,45 +7,70 @@
 │       └── main.yml                        # Workflow để build và deploy lên Cloudflare Pages
 ├── public/                                 # Các file tĩnh không qua xử lý của Vite (favicon)
 │   ├── CNAME
-│   └── mucsic.mp3
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── tenderness.mp3
+├── scripts/                                # Các script tiện ích phục vụ build & deploy
+│   ├── build-sitemap.ts				    # Tự động sinh sitemap từ routes & couples
+│   ├── generate-couples.ts.                # Sinh dữ liệu mẫu cho các couple
+│   ├── optimeize-images.ts.                # Nén & tối ưu hình ảnh trong themes/*
+│   └── check-env.ts.                       # Kiểm tra biến môi trường trước khi build
 ├── src/
+│   ├── app/  
+│   │   ├── App.tsx
+│   │   ├── main.tsx
+│   │   └── router.tsx	
 │   ├── assets/                             # Tài nguyên tĩnh của ứng dụng (hình ảnh, icons, font tùy chỉnh)
 │   │   ├── fonts/
 │   │   ├── images/
 │   │   └── icons/
-│   ├── components/							# Component tái sử dụng
-│   │   └── FlowerAnimation.tsx
-│   ├── hooks/                              # Custom hooks để tái sử dụng logic có stateful
-│   │   └── useMusic.ts                     # Hook bật/tắt nhạc nền
-│   ├── modules/
+│   ├── core/							
+│   │   ├── components/
+│   │   │   ├── common/
+│   │   │   │   └── Button.tsx
+│   │   │   ├── wedding/
+│   │   │   │   ├── BrideGroom/index.tsx
+│   │   │   │   ├── Countdown/index.tsx
+│   │   │   │   ├── EventInfo/index.tsx
+│   │   │   │   └── Gallery/index.tsx
+│   │   │   └── ui/
+│   │   │       └── FlowerAnimation.tsx 
+│   │   ├── hooks/
+│   │   │   ├── useAnalytics.ts  
+│   │   │   └── useMusic.ts  
+│   │   ├── layout/	
+│   │   │   ├── WeddingCardLayout.tsx
+│   │   │   ├── Navbar.tsx
+│   │   │   ├── SEO.tsx	
+│   │   │   └── Footer.tsx
+│   │   ├── types/							# Định nghĩa TypeScript cho cấu trúc dữ liệu cốt lõi
+│   │   │   └── index.ts
+│   │   └── index.tsx						# Barrel export cho toàn bộ core (dễ import ở ngoài)
+│   ├── lib/								# Các hàm tiện ích thuần túy (formatDate, v.v.)
+│   │   ├── sitemapGenerator.ts                     
+│   │   └── utils.ts   
+│   ├── pages/										
+│   │   ├── Home.tsx                     	
+│   │   ├── NotFound.tsx        
+│   │   └── WeddingCard.tsx             	# Một trang duy nhất để render tất cả thiệp cưới
+│   ├── services/          					# API layer (fetch couples, analytics)
+│   │   └── coupleService.ts
+│   ├── styles/                             # Các file CSS/SCSS
+│   │   ├── animation.scss 
+│   │   └── base.scss                        # Reset + CSS chung nhất
+│   ├── themes/
+│   │   ├── index.tsx						# Nơi đăng ký tất cả các theme
 │   │   ├── couple1/                        # Thiep cua Hai - Trang
 │   │   │   ├── assets/                     # Ảnh riêng couple1
-│   │   │   ├── components/					# Component riêng của couple1
-│   │   │   │   ├── BrideGroom.tsx     
-│   │   │   │   ├── Countdown.tsx  
-│   │   │   │   ├── EventInfo.tsx
-│   │   │   │   └── Gallery.tsx 
-│   │   │   ├── pages/                    
-│   │   │   │   └── WeddingCard.tsx
-│   │   │   ├── couple1.css          		# Style riêng couple1
-│   │   │   └── wedding.config.ts           # Cấu hình couple1
-│   │   ├── couple2/                        # Thiep cua Client - Server
-│   │   │   ├── assets/     
-│   │   │   ├── components/					# Component riêng của couple2
-│   │   │   │   ├── BrideGroom.tsx     
-│   │   │   │   ├── Countdown.tsx  
-│   │   │   │   ├── EventInfo.tsx
-│   │   │   │   └── Gallery.tsx                 
-│   │   │   ├── pages/                    
-│   │   │   │   └── WeddingCard.tsx
-│   │   │   ├── couple2.css          		# Style riêng couple1
-│   │   │   └── wedding.config.ts           # Cấu hình couple1
-│   ├── styles/                             # Các file CSS/SCSS
-│   │   ├── base.css                        # Reset + CSS chung nhất
-│   │   └── animation.css                   # Hiệu ứng hoa rơi
-│   ├── App.tsx                             # Component gốc của ứng dụng
-│   ├── main.tsx                            # Entry point của ứng dụng
-│   ├── router.tsx                          # Định nghĩa tất cả các routes của ứng dụng
+│   │   │   ├── data.ts                 
+│   │   │   └── style.scss 
+│   │   └── couple2/                        # Thiep cua Client - Server
+│   │       ├── assets/                     # Ảnh riêng couple1
+│   │       ├── data.ts                 
+│   │       ├── style.scss 
+│   │       └── overrides/
+│   │           └── Gallery/				# Ghi đè component Gallery mặc định
+│   │               └── index.tsx         
 │   └── vite-env.d.ts                       # Type definitions cho biến môi trường Vite
 ├── .env.development                        # Biến môi trường cho môi trường phát triển (KHÔNG COMMIT)
 ├── .env.production                         # Biến môi trường cho môi trường production (KHÔNG COMMIT)

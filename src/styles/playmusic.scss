@@ -1,0 +1,32 @@
+/* ----- MUSIC BUTTON ----- */
+.music-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 5px 15px rgba(214, 51, 108, 0.5);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.music-btn:hover {
+  background-color: var(--color-primary-dark);
+  transform: scale(1.1);
+  animation-play-state: paused;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(214, 51, 108, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(214, 51, 108, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(214, 51, 108, 0); }
+}

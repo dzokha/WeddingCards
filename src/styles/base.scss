@@ -1,0 +1,309 @@
+/* ================================================================
+ * WEDDINGCARDS HOMEPAGE - PROFESSIONAL STYLESHEET
+ * ================================================================ */
+
+/* ----- GOOGLE FONTS IMPORT ----- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@400;500;700&display=swap');
+
+/* ----- CSS VARIABLES / DESIGN TOKENS ----- */
+:root {
+   /*Fonts*/
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Quicksand', sans-serif;
+
+   /*Primary Colors*/
+  --color-primary: #d6336c; /* b45a5a; */
+   --color-primary-dark: #c2255c;
+  /*--color-primary-dark: #a04f4f;*/
+  --color-secondary-bg: #fff0f5; /*d6336c;  */
+  --color-text: #4a2c2a;
+  --color-text-muted: #6c5857;
+
+   /*Background Colors*/
+  --color-background: #fff8f8;
+  --color-white: #ffffff;
+
+   /*Accents & Shadows*/
+  --shadow-color: rgba(74, 44, 42, 0.08);
+  --shadow-color-hover: rgba(74, 44, 42, 0.15);
+  --border-radius-md: 16px;
+  --border-radius-sm: 12px;
+  --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ----- GLOBAL RESET & BASE STYLES ----- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-title-home {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: var(--transition-smooth);
+  &:hover {
+    color: var(--color-primary-dark);
+  }
+}
+
+/* =======================================
+   ----- HERO BANNER SECTION -----
+   ======================================= */
+.home-hero {
+  position: relative;
+  height: 65vh;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white);
+  background: url('https://images.unsplash.com/photo-1459401374358-a53a2a33c16b?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+  
+  .hero-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    animation: fadeInDown 1.2s ease-out;
+  }
+
+  .hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+  
+  .hero-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    /*max-width: 500px;*/
+    margin: 0 auto;
+  }
+}
+
+/* =======================================
+   ----- COUPLES LIST SECTION -----
+   ======================================= */
+.couples-section {
+    padding: 4rem 0;
+}
+
+.couples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.couple-card-link {
+  color: inherit;
+   /*Animation cho các card xuất hiện opacity: 0;*/
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.couple-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 8px 25px var(--shadow-color);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 40px var(--shadow-color-hover);
+
+    .couple-image {
+      transform: scale(1.05);
+    }
+    .view-card-btn {
+      background-color: var(--color-primary-dark);
+      transform: scale(1.03);
+    }
+  }
+
+  .card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* tỉ lệ gọn hơn, không bị quá cao */
+    overflow: hidden;
+  }
+  
+  .couple-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    .couple-names {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      color: var(--color-text);
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+
+      /* responsive, giữ 1 hàng*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 1rem; /* khoảng cách giữa tên */
+
+      font-size: clamp(1rem, 5vw, 2.5rem); /* co giãn theo khung */
+      line-height: 1.3;
+
+      span {
+        white-space: nowrap; // không xuống dòng từng tên
+      }
+    }
+
+    .wedding-date {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+    }
+    
+    .view-card-btn {
+      display: inline-block;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+      margin-top: auto; /* Đẩy nút xuống dưới cùng */
+    }
+  }
+}
+
+/* =======================================
+   ----- FOOTER SECTION -----
+   ======================================= */
+.home-footer {
+  text-align: center;
+  padding: 3rem 0;
+  margin-top: 2rem;
+  background-color: var(--color-white);
+
+  .home-footer-message {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .home-footer-separator {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .home-footer-copyright {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+  .home-footer-link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* =======================================
+   ----- KEYFRAME ANIMATIONS -----
+   ======================================= */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =======================================
+   ----- RESPONSIVE ADJUSTMENTS -----
+   ======================================= */
+@media (max-width: 768px) {
+  .couples-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .couples-section {
+    padding: 3rem 0;
+  }
+}

@@ -23,21 +23,17 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    // <-- Thêm baseUrl + paths để fix alias
-    // "baseUrl": ".", // BẮT BUỘC "src",
-    // "paths": {
-    //   "@/*": ["./src/*"], // THÊM DÒNG NÀY
-    //   "@hooks/*": ["hooks/*"],
-    //   "@components/*": ["components/*"],
-    //   "@modules/*": ["modules/*"]
-    // }
-
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["*"],
-      "@hooks/*": ["hooks/*"],
-      "@components/*": ["components/*"],
-      "@modules/*": ["modules/*"]
+      "@app/*": ["app/*"],
+      "@pages/*": ["pages/*"],
+      "@core/*": ["core/*"],
+      "@themes/*": ["themes/*"],
+      "@modules/*": ["themes/*"], // nếu bạn dùng modules = themes
+      "@assets/*": ["assets/*"],
+      "@services/*": ["services/*"],
+      "@styles/*": ["styles/*"],
+      "@lib/*": ["lib/*"]
     }
 
     
